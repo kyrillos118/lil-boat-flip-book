@@ -1,54 +1,58 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Flip Book</title>
+<meta charset="utf-8">
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<title>Flipbook</title>
 
+<!-- REQUIRED: jQuery 1.x -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
-  <!-- Turn.js -->
-  <script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
+<!-- REQUIRED: Turn.js OFFICIAL -->
+<script src="https://www.turnjs.com/lib/turn.min.js"></script>
 
-  <style>
-    body {
-      margin: 0;
-      background: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<style>
+body {
+  margin: 0;
+  background: #111;
+  overflow: hidden;
+}
 
-    #flipbook {
-      width: 900px;
-      height: 600px;
-    }
+#flipbook {
+  width: 900px;
+  height: 600px;
+  margin: 40px auto;
+}
 
-    #flipbook img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  </style>
+#flipbook .page {
+  background: white;
+}
+
+#flipbook img {
+  width: 100%;
+  height: 100%;
+}
+</style>
 </head>
 
 <body>
 
 <div id="flipbook">
-  <div><img src="page1.jpg"></div>
-  <div><img src="page2.jpg"></div>
-  <div><img src="page3.jpg"></div>
-  <div><img src="page4.jpg"></div>
+  <div class="page"><img src="page1.jpg"></div>
+  <div class="page"><img src="page2.jpg"></div>
+  <div class="page"><img src="page3.jpg"></div>
+  <div class="page"><img src="page4.jpg"></div>
+  <div class="page"><img src="page5.jpg"></div>
 </div>
 
 <script>
-  $("#flipbook").turn({
+$(window).ready(function() {
+  $('#flipbook').turn({
     width: 900,
     height: 600,
     autoCenter: true
   });
+});
 </script>
 
 </body>
