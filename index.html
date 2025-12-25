@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flip Book</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Turn.js -->
+  <script src="https://cdn.jsdelivr.net/npm/turn.js@4/turn.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #flipbook {
+      width: 900px;
+      height: 600px;
+    }
+
+    #flipbook img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="flipbook">
+  <div><img src="page1.jpg"></div>
+  <div><img src="page2.jpg"></div>
+  <div><img src="page3.jpg"></div>
+  <div><img src="page4.jpg"></div>
+</div>
+
+<script>
+  $("#flipbook").turn({
+    width: 900,
+    height: 600,
+    autoCenter: true
+  });
+</script>
+
+</body>
+</html>
